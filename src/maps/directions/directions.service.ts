@@ -1,5 +1,9 @@
-import { DirectionsRequest, Client as GoogleMapsClient, PlaceInputType, TravelMode } from '@googlemaps/google-maps-services-js';
 import { Injectable } from '@nestjs/common';
+import {
+  DirectionsRequest,
+  Client as GoogleMapsClient,
+  TravelMode,
+} from '@googlemaps/google-maps-services-js';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()

@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  app: 
-    build:  .
+  app:
+    build: .
     ports:
       - "3000:3000"
       - "5555:5555"
     volumes:
       - .:/home/node/app
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
 
-  # sempre que precisar parar os containers rode o comando:
+  # sempre que precisar parar os container rode o comando:
   # docker compose down --volumes
   
   db:
@@ -25,7 +25,7 @@ services:
       MONGODB_REPLICA_SET_MODE: primary
       MONGODB_REPLICA_SET_KEY: 123456
       MONGODB_DATABASE: nest
-
+  
   redis:
     image: redis:7.0.8-alpine
 
